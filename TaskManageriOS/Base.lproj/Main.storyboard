@@ -21,10 +21,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqY-kB-5D7">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <state key="normal" title="Log in"/>
+                                        <connections>
+                                            <segue destination="9bv-tb-z7Q" kind="show" id="1Da-kR-7dJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu4-tY-K0r">
                                         <rect key="frame" x="0.0" y="50" width="374" height="30"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <segue destination="Qh5-YE-GKh" kind="show" id="0Ni-xY-pld"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -42,6 +48,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jLa-qv-5Hb">
+            <objects>
+                <viewController id="Qh5-YE-GKh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QiV-Pv-1Ia">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bSj-Ri-EUh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cmn-Ar-I3p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZh-ZL-txW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="445"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qNE-vl-UzM">
+            <objects>
+                <viewController id="9bv-tb-z7Q" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rUc-d7-DKA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7ij-6f-NJr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h6b-lm-6Rk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HsK-78-Xsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="-301"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LfJ-Xg-aO9">
