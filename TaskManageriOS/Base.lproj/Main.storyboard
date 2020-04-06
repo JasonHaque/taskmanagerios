@@ -126,6 +126,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKO-sG-lfN">
                                         <rect key="frame" x="0.0" y="108" width="374" height="30"/>
                                         <state key="normal" title="Log in"/>
+                                        <connections>
+                                            <action selector="LogInTapped:" destination="9bv-tb-z7Q" eventType="touchUpInside" id="pnh-yO-lFk"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFo-Nj-r2b">
                                         <rect key="frame" x="0.0" y="158" width="374" height="20.5"/>
@@ -145,15 +148,20 @@
                         <viewLayoutGuide key="safeArea" id="7ij-6f-NJr"/>
                     </view>
                     <navigationItem key="navigationItem" id="h6b-lm-6Rk"/>
+                    <connections>
+                        <outlet property="EmailField" destination="fFQ-DE-svp" id="6JQ-ax-gxF"/>
+                        <outlet property="ErrorLabel" destination="bFo-Nj-r2b" id="bFS-JD-kms"/>
+                        <outlet property="PasswordField" destination="geu-LZ-AIV" id="Unm-ru-YKV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HsK-78-Xsg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1841" y="-301"/>
         </scene>
-        <!--View Controller-->
+        <!--HomeUI View Controller-->
         <scene sceneID="3RZ-sM-8zB">
             <objects>
-                <viewController id="BAC-ts-cfl" sceneMemberID="viewController">
+                <viewController id="BAC-ts-cfl" customClass="HomeUIViewController" customModule="TaskManageriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="28r-wX-vWX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
