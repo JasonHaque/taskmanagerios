@@ -150,6 +150,34 @@
             </objects>
             <point key="canvasLocation" x="1841" y="-301"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3RZ-sM-8zB">
+            <objects>
+                <viewController id="BAC-ts-cfl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="28r-wX-vWX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the app" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-zL-B2L">
+                                <rect key="frame" x="20" y="397" width="374" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Wk-zL-B2L" firstAttribute="top" secondItem="YCx-z1-mbr" secondAttribute="top" constant="353" id="Lsc-wQ-yTX"/>
+                            <constraint firstItem="2Wk-zL-B2L" firstAttribute="leading" secondItem="YCx-z1-mbr" secondAttribute="leading" constant="20" id="SUH-S3-R7P"/>
+                            <constraint firstItem="YCx-z1-mbr" firstAttribute="trailing" secondItem="2Wk-zL-B2L" secondAttribute="trailing" constant="20" id="q9O-aE-nJ7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YCx-z1-mbr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6WD-ML-dV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="-9"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="LfJ-Xg-aO9">
             <objects>
