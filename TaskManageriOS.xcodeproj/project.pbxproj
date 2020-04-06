@@ -15,6 +15,7 @@
 		96C58065243A7401008CB517 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C58063243A7401008CB517 /* LaunchScreen.storyboard */; };
 		96C5806E243B5865008CB517 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5806D243B5865008CB517 /* LogInViewController.swift */; };
 		96C58070243B5881008CB517 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5806F243B5881008CB517 /* SignUpViewController.swift */; };
+		96C58072243BBA84008CB517 /* HomeUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C58071243BBA84008CB517 /* HomeUIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		96C58066243A7401008CB517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96C5806D243B5865008CB517 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		96C5806F243B5881008CB517 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		96C58071243BBA84008CB517 /* HomeUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				96C5805C243A73FF008CB517 /* ViewController.swift */,
 				96C5806D243B5865008CB517 /* LogInViewController.swift */,
 				96C5806F243B5881008CB517 /* SignUpViewController.swift */,
+				96C58071243BBA84008CB517 /* HomeUIViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				96C5806E243B5865008CB517 /* LogInViewController.swift in Sources */,
 				96C5805D243A73FF008CB517 /* ViewController.swift in Sources */,
 				96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */,
+				96C58072243BBA84008CB517 /* HomeUIViewController.swift in Sources */,
 				96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */,
 				96C58070243B5881008CB517 /* SignUpViewController.swift in Sources */,
 			);
