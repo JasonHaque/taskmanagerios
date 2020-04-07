@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
 
@@ -31,6 +32,15 @@ class LogInViewController: UIViewController {
                  return
              }
       ErrorLabel.text = ""
+      Auth.auth().signIn(withEmail: email, password: passWord){(result, error) in
+                 if(error != nil){
+                     //self.showError(message: "Could not log in")
+                     self.ErrorLabel.text = error!.localizedDescription
+                 }
+                 self.transitionHome()
+                 
+                 
+             }
     }
     
     func verifyInputs(_ email:String,_ password:String) -> String {
@@ -46,5 +56,9 @@ class LogInViewController: UIViewController {
         
         return ""
     }
-    
+    func transitionHome(){
+           let homeView = storyboard?.instantiateViewController(identifier: "HomeView") as? HomeUIViewController
+           view.window?.rootViewController = homeView
+           view.window?.makeKeyAndVisible()
+       }
 }
