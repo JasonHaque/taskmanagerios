@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
@@ -33,6 +34,14 @@ class SignUpViewController: UIViewController {
             return
         }
         SignUpErrorLabel.text = ""
+        
+        Auth.auth().createUser(withEmail: email, password: passWord) { (result, error) in
+                   if(error != nil){
+                       //self.showError("Could not create user")
+                       self.SignUpErrorLabel.text = error!.localizedDescription
+                   }
+                   self.transitionHome()
+               }
     }
     
     func verifyInputs(_ email:String,_ password:String,_ confirmPassowrd:String) -> String {
@@ -49,6 +58,12 @@ class SignUpViewController: UIViewController {
             return "Passwords not matching"
         }
         return ""
+    }
+    
+    func transitionHome(){
+        let homeView = storyboard?.instantiateViewController(identifier: "HomeView") as? HomeUIViewController
+        view.window?.rootViewController = homeView
+        view.window?.makeKeyAndVisible()
     }
     
 }
