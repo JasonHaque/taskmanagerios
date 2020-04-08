@@ -184,6 +184,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQa-M5-rrP">
                                 <rect key="frame" x="100" y="469.5" width="214" height="30"/>
                                 <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="LogOutTapped:" destination="BAC-ts-cfl" eventType="touchUpInside" id="eRU-Ai-LIL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

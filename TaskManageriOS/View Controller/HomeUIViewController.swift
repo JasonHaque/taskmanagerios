@@ -17,5 +17,15 @@ class HomeUIViewController: UIViewController {
         UserLabel.text = Auth.auth().currentUser?.email
     }
     
-
+    @IBAction func LogOutTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+               do {
+                 try firebaseAuth.signOut()
+                   print("Signed out")
+                  // self.transitionStart()
+               } catch let signOutError as NSError {
+                 print ("Error signing out: %@", signOutError)
+               }
+    }
+    
 }
