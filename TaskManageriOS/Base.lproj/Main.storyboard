@@ -190,6 +190,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YCx-z1-mbr"/>
                     </view>
+                    <connections>
+                        <outlet property="UserLabel" destination="2Wk-zL-B2L" id="gTB-UK-xHV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WD-ML-dV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
