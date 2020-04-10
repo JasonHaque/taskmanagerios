@@ -10,14 +10,17 @@ import UIKit
 
 class NewTaskViewController: UIViewController {
 
+    @IBOutlet weak var TaskErrorlabel: UILabel!
     @IBOutlet weak var TaskNameField: UITextField!
     @IBOutlet weak var TaskDescription: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        TaskErrorlabel.text = ""
         
     }
     
     @IBAction func SaveButton(_ sender: Any) {
+        
     }
     
     

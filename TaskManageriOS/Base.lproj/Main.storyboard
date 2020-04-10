@@ -267,6 +267,7 @@
                     <navigationItem key="navigationItem" id="8N6-Ee-GBH"/>
                     <connections>
                         <outlet property="TaskDescription" destination="FFt-6H-32P" id="8ND-97-rIT"/>
+                        <outlet property="TaskErrorlabel" destination="zae-zg-VTh" id="sQ1-X4-sww"/>
                         <outlet property="TaskNameField" destination="7MZ-LB-I4Q" id="XBX-1J-fPy"/>
                     </connections>
                 </viewController>
