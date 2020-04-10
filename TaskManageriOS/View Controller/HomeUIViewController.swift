@@ -22,10 +22,16 @@ class HomeUIViewController: UIViewController {
                do {
                  try firebaseAuth.signOut()
                    print("Signed out")
-                  // self.transitionStart()
+                   self.transitionStart()
                } catch let signOutError as NSError {
                  print ("Error signing out: %@", signOutError)
                }
+    }
+    
+    func transitionStart(){
+        let homeView = storyboard?.instantiateViewController(identifier: "StartView") as? ViewController
+        view.window?.rootViewController = homeView
+        view.window?.makeKeyAndVisible()
     }
     
 }
