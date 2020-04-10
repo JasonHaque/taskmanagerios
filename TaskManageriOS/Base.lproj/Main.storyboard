@@ -191,6 +191,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-uy-71e">
                                 <rect key="frame" x="20" y="539.5" width="374" height="30"/>
                                 <state key="normal" title="Create Task"/>
+                                <connections>
+                                    <segue destination="0TR-26-6Za" kind="show" id="YCP-mi-4Ss"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -216,16 +219,17 @@
             </objects>
             <point key="canvasLocation" x="2773.913043478261" y="-9.375"/>
         </scene>
-        <!--View Controller-->
+        <!--New Task View Controller-->
         <scene sceneID="Va8-Uc-LYV">
             <objects>
-                <viewController id="0TR-26-6Za" sceneMemberID="viewController">
+                <viewController id="0TR-26-6Za" customClass="NewTaskViewController" customModule="TaskManageriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u0k-Y8-ZhY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="nAu-dA-eD5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8N6-Ee-GBH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7Y-bs-iiS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
