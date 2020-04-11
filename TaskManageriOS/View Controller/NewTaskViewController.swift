@@ -20,7 +20,24 @@ class NewTaskViewController: UIViewController {
     }
     
     @IBAction func SaveButton(_ sender: Any) {
+        let taskName = TaskNameField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let taskDescription = TaskDescription.text!.trimmingCharacters(in: .newlines)
         
+        let error = verifyInputs(taskName,taskDescription)
+        
+        if(error != ""){
+            TaskErrorlabel.text = error
+            return
+        }
+        TaskErrorlabel.text = ""
+        
+    }
+    
+    func verifyInputs(_ taskName:String,_ taskDescription:String)-> String{
+        if(taskName=="" || taskDescription==""){
+            return "Fill up the fields properly"
+        }
+        return ""
     }
     
     
