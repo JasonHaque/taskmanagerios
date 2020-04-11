@@ -37,7 +37,6 @@ class SignUpViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: passWord) { (result, error) in
                    if(error != nil){
-                       //self.showError("Could not create user")
                        self.SignUpErrorLabel.text = error!.localizedDescription
                    }
                    self.transitionHome()

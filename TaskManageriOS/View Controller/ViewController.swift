@@ -22,8 +22,7 @@ class ViewController: UIViewController {
             if user != nil {
                 self.transitionHome()
             } else {
-                 // user is not signed in
-                 // go to login controller
+                 
             }
         }
     }

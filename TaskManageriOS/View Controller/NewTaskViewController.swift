@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class NewTaskViewController: UIViewController {
 
     @IBOutlet weak var TaskErrorlabel: UILabel!
@@ -30,6 +30,15 @@ class NewTaskViewController: UIViewController {
             return
         }
         TaskErrorlabel.text = ""
+        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
+        let user = String(email[0])
+        
+        let taskdata = [
+            "taskName" : taskName,
+            "taskDesc" : taskDescription
+        ]
+        let ref = Database.database().reference()
+        ref.child("Users").child(user).child(taskName).setValue(taskdata)
         
     }
     
