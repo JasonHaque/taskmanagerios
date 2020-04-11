@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        checkCurrentUser()
+        
+    }
+    
+    func checkCurrentUser(){
+       Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.transitionHome()
+            } else {
+                 // user is not signed in
+                 // go to login controller
+            }
+        }
+    }
+    
+    func transitionHome(){
+        let homeView = storyboard?.instantiateViewController(identifier: "HomeView") as? HomeUIViewController
+        view.window?.rootViewController = homeView
+        view.window?.makeKeyAndVisible()
     }
 
 
