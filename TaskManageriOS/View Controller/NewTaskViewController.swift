@@ -13,6 +13,9 @@ class NewTaskViewController: UIViewController {
     @IBOutlet weak var TaskErrorlabel: UILabel!
     @IBOutlet weak var TaskNameField: UITextField!
     @IBOutlet weak var TaskDescription: UITextField!
+    
+    @IBOutlet weak var Tabletaskview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         TaskErrorlabel.text = ""
