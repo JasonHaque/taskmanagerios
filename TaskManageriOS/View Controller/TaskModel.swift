@@ -9,11 +9,11 @@
 class TaskModel{
     var id : String?
     var taskName : String?
-    var taskDec : String?
+    var taskDesc : String?
     
     init(id : String?,taskName:String?,taskDesc:String?) {
         self.id = id
         self.taskName = taskName
-        self.taskDec = taskDesc
+        self.taskDesc = taskDesc
     }
 }
