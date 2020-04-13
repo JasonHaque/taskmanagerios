@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		96514ED3243C9B57009A13B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */; };
-		967361CE2441F155009552E9 /* AllTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967361CD2441F155009552E9 /* AllTasksViewController.swift */; };
 		96A13370243E27EE00A03917 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A1336F243E27EE00A03917 /* NewTaskViewController.swift */; };
 		96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C58058243A73FF008CB517 /* AppDelegate.swift */; };
 		96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5805A243A73FF008CB517 /* SceneDelegate.swift */; };
@@ -26,7 +25,6 @@
 		664C5B9654D49DD0CCFAAF8A /* Pods_TaskManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891348AABD9654C97A732B58 /* Pods-TaskManageriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManageriOS.release.xcconfig"; path = "Target Support Files/Pods-TaskManageriOS/Pods-TaskManageriOS.release.xcconfig"; sourceTree = "<group>"; };
 		96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		967361CD2441F155009552E9 /* AllTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksViewController.swift; sourceTree = "<group>"; };
 		96A1336F243E27EE00A03917 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		96C58055243A73FF008CB517 /* TaskManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C58058243A73FF008CB517 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 				96C5806F243B5881008CB517 /* SignUpViewController.swift */,
 				96C58071243BBA84008CB517 /* HomeUIViewController.swift */,
 				96A1336F243E27EE00A03917 /* NewTaskViewController.swift */,
-				967361CD2441F155009552E9 /* AllTasksViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -238,7 +235,6 @@
 				96C5805D243A73FF008CB517 /* ViewController.swift in Sources */,
 				96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */,
 				96C58072243BBA84008CB517 /* HomeUIViewController.swift in Sources */,
-				967361CE2441F155009552E9 /* AllTasksViewController.swift in Sources */,
 				96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */,
 				96C58070243B5881008CB517 /* SignUpViewController.swift in Sources */,
 			);
