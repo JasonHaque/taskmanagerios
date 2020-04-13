@@ -255,11 +255,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Gt-sU-n5x">
+                                <rect key="frame" x="20" y="238.5" width="374" height="549.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="108" id="3gk-Jj-h34">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="108"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3gk-Jj-h34" id="bFA-ey-dhc">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="W0W-aM-THA" firstAttribute="top" secondItem="nAu-dA-eD5" secondAttribute="top" constant="40" id="5Wp-yo-iha"/>
                             <constraint firstItem="W0W-aM-THA" firstAttribute="leading" secondItem="nAu-dA-eD5" secondAttribute="leading" constant="20" id="AgQ-bf-DLP"/>
+                            <constraint firstItem="0Gt-sU-n5x" firstAttribute="leading" secondItem="nAu-dA-eD5" secondAttribute="leading" constant="20" id="B6I-0m-7Lm"/>
+                            <constraint firstItem="nAu-dA-eD5" firstAttribute="trailing" secondItem="0Gt-sU-n5x" secondAttribute="trailing" constant="20" id="cEp-TI-QPi"/>
+                            <constraint firstItem="0Gt-sU-n5x" firstAttribute="top" secondItem="W0W-aM-THA" secondAttribute="bottom" constant="20" id="hXc-IK-bb0"/>
+                            <constraint firstItem="nAu-dA-eD5" firstAttribute="bottom" secondItem="0Gt-sU-n5x" secondAttribute="bottom" constant="20" id="wZ7-w0-dSp"/>
                             <constraint firstItem="nAu-dA-eD5" firstAttribute="trailing" secondItem="W0W-aM-THA" secondAttribute="trailing" constant="20" id="y7P-cK-YQc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nAu-dA-eD5"/>
@@ -273,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7Y-bs-iiS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3713" y="-35"/>
+            <point key="canvasLocation" x="3711.594202898551" y="-35.491071428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LfJ-Xg-aO9">

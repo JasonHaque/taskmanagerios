@@ -40,6 +40,7 @@ class NewTaskViewController: UIViewController {
             "taskDesc" : taskDescription
         ]
         ref.child("Users").child(user).child((key)!).setValue(taskdata)
+        TaskErrorlabel.text = "Successfully saved data"
         
     }
     
