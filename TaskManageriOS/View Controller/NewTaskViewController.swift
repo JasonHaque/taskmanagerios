@@ -17,6 +17,8 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskTableViewCell
         let task : TaskModel
         task = taskList[indexPath.row]
+        print(task.taskName)
+        print(task.taskDesc)
         cell.taskName.text = task.taskName
         cell.taskDesc.text = task.taskDesc
         
