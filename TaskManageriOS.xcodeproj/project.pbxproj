@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		964B41532444A7C600853485 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B41522444A7C600853485 /* TaskTableViewCell.swift */; };
 		96514ED3243C9B57009A13B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */; };
 		96A13370243E27EE00A03917 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A1336F243E27EE00A03917 /* NewTaskViewController.swift */; };
 		96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C58058243A73FF008CB517 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		664C5B9654D49DD0CCFAAF8A /* Pods_TaskManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891348AABD9654C97A732B58 /* Pods-TaskManageriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManageriOS.release.xcconfig"; path = "Target Support Files/Pods-TaskManageriOS/Pods-TaskManageriOS.release.xcconfig"; sourceTree = "<group>"; };
+		964B41522444A7C600853485 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96A1336F243E27EE00A03917 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		96C58055243A73FF008CB517 /* TaskManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				96C5806F243B5881008CB517 /* SignUpViewController.swift */,
 				96C58071243BBA84008CB517 /* HomeUIViewController.swift */,
 				96A1336F243E27EE00A03917 /* NewTaskViewController.swift */,
+				964B41522444A7C600853485 /* TaskTableViewCell.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964B41532444A7C600853485 /* TaskTableViewCell.swift in Sources */,
 				96C5806E243B5865008CB517 /* LogInViewController.swift in Sources */,
 				96A13370243E27EE00A03917 /* NewTaskViewController.swift in Sources */,
 				96C5805D243A73FF008CB517 /* ViewController.swift in Sources */,
