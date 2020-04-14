@@ -32,7 +32,7 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
         }
         let deleteAction = UIAlertAction(title: "Delete", style: .default){(_) in
-            
+            self.deleteTask(id: task.id!)
         }
         alertController.addTextField { (UITextField) in
             UITextField.text = task.taskName
@@ -134,6 +134,13 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         TaskErrorlabel.text = "Successfully updated data"
     }
     
+    func deleteTask(id:String){
+        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
+        let user = String(email[0])
+        let ref = Database.database().reference()
+        ref.child("Users").child(user).child(id).setValue(nil)
+        TaskErrorlabel.text = "Successfully deleted data"
+    }
     
 
 }
