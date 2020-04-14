@@ -9,12 +9,28 @@
 import UIKit
 import Firebase
 class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskList.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alertController = UIAlertController(title: "Example", message: "example msg", preferredStyle: .alert)
+        
+        let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
+            
+        }
+        let deleteAction = UIAlertAction(title: "Delete", style: .default){(_) in
+            
+        }
+        alertController.addAction(updateAction)
+        alertController.addAction(deleteAction)
+        present(alertController,animated: true,completion: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
