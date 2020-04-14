@@ -20,13 +20,25 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertController = UIAlertController(title: "Example", message: "example msg", preferredStyle: .alert)
+        let task = taskList[indexPath.row]
+        let alertController = UIAlertController(title: task.taskName, message: "New Task Desc" ,preferredStyle: .alert)
         
         let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
+            let id = task.id
+            let taskName = alertController.textFields?[0].text
+            let taskDesc = alertController.textFields?[1].text
+            
+            self.updateTask(id: id!, name: taskName!, desc: taskDesc!)
             
         }
         let deleteAction = UIAlertAction(title: "Delete", style: .default){(_) in
             
+        }
+        alertController.addTextField { (UITextField) in
+            UITextField.text = task.taskName
+        }
+        alertController.addTextField { (UITextField) in
+            UITextField.text = task.taskDesc
         }
         alertController.addAction(updateAction)
         alertController.addAction(deleteAction)
@@ -108,6 +120,18 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
             return "Fill up the fields properly"
         }
         return ""
+    }
+    func updateTask(id : String,name : String,desc:String){
+        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
+        let user = String(email[0])
+        let ref = Database.database().reference()
+        let taskdata = [
+                   "Id" : id,
+                   "taskName" : name,
+                   "taskDesc" : desc
+               ]
+        ref.child("Users").child(user).child(id).setValue(taskdata)
+        TaskErrorlabel.text = "Successfully updated data"
     }
     
     
