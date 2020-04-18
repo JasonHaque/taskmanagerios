@@ -176,20 +176,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-zL-B2L">
-                                <rect key="frame" x="20" y="397" width="374" height="32.5"/>
+                                <rect key="frame" x="20" y="441" width="374" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQa-M5-rrP">
-                                <rect key="frame" x="100" y="469.5" width="214" height="30"/>
+                                <rect key="frame" x="100" y="513.5" width="214" height="30"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="LogOutTapped:" destination="BAC-ts-cfl" eventType="touchUpInside" id="eRU-Ai-LIL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-uy-71e">
-                                <rect key="frame" x="20" y="539.5" width="374" height="30"/>
+                                <rect key="frame" x="20" y="583.5" width="374" height="30"/>
                                 <state key="normal" title="Create Task"/>
                                 <connections>
                                     <segue destination="0TR-26-6Za" kind="show" id="YCP-mi-4Ss"/>
@@ -211,24 +211,25 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YCx-z1-mbr"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8pS-Kk-bYv"/>
                     <connections>
                         <outlet property="UserLabel" destination="2Wk-zL-B2L" id="gTB-UK-xHV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WD-ML-dV4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2773.913043478261" y="-9.375"/>
+            <point key="canvasLocation" x="3684.057971014493" y="-9.375"/>
         </scene>
         <!--New Task View Controller-->
         <scene sceneID="Va8-Uc-LYV">
             <objects>
                 <viewController id="0TR-26-6Za" customClass="NewTaskViewController" customModule="TaskManageriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u0k-Y8-ZhY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-aM-THA">
-                                <rect key="frame" x="20" y="40" width="374" height="178.5"/>
+                                <rect key="frame" x="20" y="128" width="374" height="178.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MZ-LB-I4Q">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -256,7 +257,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Gt-sU-n5x">
-                                <rect key="frame" x="20" y="238.5" width="374" height="549.5"/>
+                                <rect key="frame" x="20" y="326.5" width="374" height="515.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="171" id="3gk-Jj-h34" customClass="TaskTableViewCell" customModule="TaskManageriOS" customModuleProvider="target">
@@ -322,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7Y-bs-iiS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3711.594202898551" y="-35.491071428571423"/>
+            <point key="canvasLocation" x="4621.739130434783" y="-35.491071428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LfJ-Xg-aO9">
@@ -341,6 +342,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ook-F6-Btf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kqt-oW-VYk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E2G-W7-IPd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3w-kW-KES">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BAC-ts-cfl" kind="relationship" relationship="rootViewController" id="0bz-Oj-4SE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3C-rK-uv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2773.913043478261" y="-9.375"/>
         </scene>
     </scenes>
 </document>
