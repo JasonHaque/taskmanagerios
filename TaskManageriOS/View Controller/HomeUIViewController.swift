@@ -14,7 +14,8 @@ class HomeUIViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserLabel.text = Auth.auth().currentUser?.email
+        let welcome = UserLabel.text!
+        UserLabel.text = welcome+" "+(Auth.auth().currentUser?.email)!
     }
     
     @IBAction func LogOutTapped(_ sender: Any) {
