@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		964B41532444A7C600853485 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B41522444A7C600853485 /* TaskTableViewCell.swift */; };
 		964B41552444A8C700853485 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B41542444A8C700853485 /* TaskModel.swift */; };
+		9650D8B3246DD5CF00968CF8 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650D8B2246DD5CF00968CF8 /* TaskManager.swift */; };
 		96514ED3243C9B57009A13B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */; };
 		96A13370243E27EE00A03917 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A1336F243E27EE00A03917 /* NewTaskViewController.swift */; };
 		96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C58058243A73FF008CB517 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		891348AABD9654C97A732B58 /* Pods-TaskManageriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManageriOS.release.xcconfig"; path = "Target Support Files/Pods-TaskManageriOS/Pods-TaskManageriOS.release.xcconfig"; sourceTree = "<group>"; };
 		964B41522444A7C600853485 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		964B41542444A8C700853485 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		9650D8B2246DD5CF00968CF8 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96A1336F243E27EE00A03917 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		96C58055243A73FF008CB517 /* TaskManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9650D8B1246DD59200968CF8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				9689DD3A244ABF2D007B9427 /* TableView Cells */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		9689DD37244ABEC7007B9427 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,20 +75,11 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		9689DD38244ABEEC007B9427 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				96A1336F243E27EE00A03917 /* NewTaskViewController.swift */,
-				96C5805C243A73FF008CB517 /* ViewController.swift */,
-				96C58071243BBA84008CB517 /* HomeUIViewController.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		9689DD39244ABF10007B9427 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				964B41542444A8C700853485 /* TaskModel.swift */,
+				9650D8B2246DD5CF00968CF8 /* TaskManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +113,8 @@
 		96C58057243A73FF008CB517 /* TaskManageriOS */ = {
 			isa = PBXGroup;
 			children = (
+				9650D8B1246DD59200968CF8 /* views */,
+				9689DD39244ABF10007B9427 /* Models */,
 				96C5806C243B583F008CB517 /* View Controller */,
 				96C58058243A73FF008CB517 /* AppDelegate.swift */,
 				96C5805A243A73FF008CB517 /* SceneDelegate.swift */,
@@ -127,9 +130,9 @@
 		96C5806C243B583F008CB517 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9689DD3A244ABF2D007B9427 /* TableView Cells */,
-				9689DD39244ABF10007B9427 /* Models */,
-				9689DD38244ABEEC007B9427 /* Views */,
+				96C58071243BBA84008CB517 /* HomeUIViewController.swift */,
+				96C5805C243A73FF008CB517 /* ViewController.swift */,
+				96A1336F243E27EE00A03917 /* NewTaskViewController.swift */,
 				9689DD37244ABEC7007B9427 /* Authentication */,
 			);
 			path = "View Controller";
@@ -270,6 +273,7 @@
 			files = (
 				964B41532444A7C600853485 /* TaskTableViewCell.swift in Sources */,
 				96C5806E243B5865008CB517 /* LogInViewController.swift in Sources */,
+				9650D8B3246DD5CF00968CF8 /* TaskManager.swift in Sources */,
 				96A13370243E27EE00A03917 /* NewTaskViewController.swift in Sources */,
 				964B41552444A8C700853485 /* TaskModel.swift in Sources */,
 				96C5805D243A73FF008CB517 /* ViewController.swift in Sources */,

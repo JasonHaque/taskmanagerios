@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NgR-vS-k32">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -195,7 +195,7 @@
             </objects>
             <point key="canvasLocation" x="1841" y="-301"/>
         </scene>
-        <!--HomeUI View Controller-->
+        <!--Home-->
         <scene sceneID="3RZ-sM-8zB">
             <objects>
                 <viewController storyboardIdentifier="HomeView" id="BAC-ts-cfl" customClass="HomeUIViewController" customModule="TaskManageriOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,42 +204,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-zL-B2L">
-                                <rect key="frame" x="20" y="441" width="374" height="32.5"/>
+                                <rect key="frame" x="20" y="397" width="374" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQa-M5-rrP">
-                                <rect key="frame" x="100" y="513.5" width="214" height="30"/>
+                                <rect key="frame" x="100" y="469.5" width="214" height="30"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="LogOutTapped:" destination="BAC-ts-cfl" eventType="touchUpInside" id="eRU-Ai-LIL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-uy-71e">
-                                <rect key="frame" x="20" y="583.5" width="374" height="30"/>
-                                <state key="normal" title="Create Task"/>
-                                <connections>
-                                    <segue destination="0TR-26-6Za" kind="show" id="YCP-mi-4Ss"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wcm-rt-zYI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Home" id="CHb-WN-Ms4">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="veb-zQ-1yV">
+                                            <connections>
+                                                <segue destination="0TR-26-6Za" kind="show" id="uQK-ey-b7q"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="OAK-uy-71e" firstAttribute="top" secondItem="zQa-M5-rrP" secondAttribute="bottom" constant="40" id="4Qn-BX-cGv"/>
                             <constraint firstItem="YCx-z1-mbr" firstAttribute="trailing" secondItem="zQa-M5-rrP" secondAttribute="trailing" constant="100" id="Ga8-BD-FMF"/>
+                            <constraint firstItem="YCx-z1-mbr" firstAttribute="trailing" secondItem="Wcm-rt-zYI" secondAttribute="trailing" id="KYH-20-evm"/>
                             <constraint firstItem="2Wk-zL-B2L" firstAttribute="top" secondItem="YCx-z1-mbr" secondAttribute="top" constant="353" id="Lsc-wQ-yTX"/>
-                            <constraint firstItem="OAK-uy-71e" firstAttribute="centerX" secondItem="zQa-M5-rrP" secondAttribute="centerX" id="QVK-fv-nNB"/>
+                            <constraint firstItem="Wcm-rt-zYI" firstAttribute="leading" secondItem="28r-wX-vWX" secondAttribute="leading" id="NLe-S6-h7t"/>
                             <constraint firstItem="2Wk-zL-B2L" firstAttribute="leading" secondItem="YCx-z1-mbr" secondAttribute="leading" constant="20" id="SUH-S3-R7P"/>
-                            <constraint firstItem="OAK-uy-71e" firstAttribute="height" secondItem="zQa-M5-rrP" secondAttribute="height" id="YS0-2I-WhT"/>
-                            <constraint firstItem="YCx-z1-mbr" firstAttribute="trailing" secondItem="OAK-uy-71e" secondAttribute="trailing" constant="20" id="gk7-rQ-oBZ"/>
                             <constraint firstItem="zQa-M5-rrP" firstAttribute="leading" secondItem="YCx-z1-mbr" secondAttribute="leading" constant="100" id="kGB-dU-Z97"/>
                             <constraint firstItem="zQa-M5-rrP" firstAttribute="top" secondItem="2Wk-zL-B2L" secondAttribute="bottom" constant="40" id="lfg-PL-vDN"/>
+                            <constraint firstItem="Wcm-rt-zYI" firstAttribute="top" secondItem="YCx-z1-mbr" secondAttribute="top" id="q4d-Uj-dHw"/>
                             <constraint firstItem="YCx-z1-mbr" firstAttribute="trailing" secondItem="2Wk-zL-B2L" secondAttribute="trailing" constant="20" id="q9O-aE-nJ7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YCx-z1-mbr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8pS-Kk-bYv"/>
+                    <navigationItem key="navigationItem" title="Home" id="8pS-Kk-bYv"/>
                     <connections>
                         <outlet property="UserLabel" destination="2Wk-zL-B2L" id="gTB-UK-xHV"/>
                     </connections>
@@ -257,7 +261,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-aM-THA">
-                                <rect key="frame" x="20" y="128" width="374" height="178.5"/>
+                                <rect key="frame" x="20" y="84" width="374" height="178.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MZ-LB-I4Q">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -285,7 +289,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Gt-sU-n5x">
-                                <rect key="frame" x="20" y="326.5" width="374" height="515.5"/>
+                                <rect key="frame" x="20" y="282.5" width="374" height="559.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="171" id="3gk-Jj-h34" customClass="TaskTableViewCell" customModule="TaskManageriOS" customModuleProvider="target">
@@ -374,10 +378,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Kqt-oW-VYk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E2G-W7-IPd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="E2G-W7-IPd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3w-kW-KES">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
