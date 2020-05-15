@@ -12,7 +12,7 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskList.count
+        return dummyTasks.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
@@ -81,27 +81,8 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         
         
-       //print("dummyTasks")
-       let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
-        let user = String(email[0])
-        let dref = Database.database().reference().child("Users").child(user)
-        dref.observe(DataEventType.value, with: {(DataSnapshot) in
-            if (DataSnapshot.childrenCount > 0){
-                self.taskList.removeAll()
-                for tasks in DataSnapshot.children.allObjects as! [DataSnapshot]{
-                    let taskObject = tasks.value as? [String : AnyObject]
-                    let taskName = taskObject?["taskName"]
-                    let taskDesc = taskObject?["taskDesc"]
-                    let id = taskObject?["Id"]
-                    
-                    let task = TaskModel(id: id as! String?, taskName: taskName as! String?, taskDesc: taskDesc as! String?)
-                    self.taskList.append(task)
-                    
-                }
-            }
-            //print(self.taskList)
-            //self.Tabletaskview.reloadData()
-        })
+      
+       
         
     }
     
