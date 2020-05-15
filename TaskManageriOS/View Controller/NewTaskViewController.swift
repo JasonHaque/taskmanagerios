@@ -19,7 +19,7 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 150
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  /*  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = taskList[indexPath.row]
         let alertController = UIAlertController(title: task.taskName, message: "New Task Desc" ,preferredStyle: .alert)
         
@@ -43,17 +43,19 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         alertController.addAction(updateAction)
         alertController.addAction(deleteAction)
         present(alertController,animated: true,completion: nil)
-    }
+    } */
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskTableViewCell
         let task : TaskModel
-        task = taskList[indexPath.row]
+        task = dummyTasks[indexPath.row]
+        print("dummy data \(dummyTasks[indexPath.row])")
         cell.taskName.text = task.taskName
         cell.taskDesc.text = task.taskDesc
         
         return cell
     }
+    
     
 
     @IBOutlet weak var TaskErrorlabel: UILabel!
@@ -62,12 +64,25 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var Tabletaskview: UITableView!
     var taskList = [TaskModel]()
+    var dummyTasks = [TaskModel]()
+    var model = TaskManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         TaskErrorlabel.text = ""
         
-        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
+        model.getTask { (taskArray) in
+            for tasks in taskArray{
+                self.dummyTasks.append(tasks)
+            }
+            print(self.dummyTasks)
+            
+            self.Tabletaskview.reloadData()
+        }
+        
+        
+       //print("dummyTasks")
+       let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
         let user = String(email[0])
         let dref = Database.database().reference().child("Users").child(user)
         dref.observe(DataEventType.value, with: {(DataSnapshot) in
@@ -84,8 +99,8 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     
                 }
             }
-            print(self.taskList)
-            self.Tabletaskview.reloadData()
+            //print(self.taskList)
+            //self.Tabletaskview.reloadData()
         })
         
     }

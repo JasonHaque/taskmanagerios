@@ -11,14 +11,18 @@ import Firebase
 
 public class TaskManager{
     
-    func getTask()->[TaskModel]{
+   
+    
+    func getTask(completion: @escaping ([TaskModel]) -> Void){
         var taskArray = [TaskModel]()
+        
+           
         let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
                let user = String(email[0])
                let dref = Database.database().reference().child("Users").child(user)
                dref.observe(DataEventType.value, with: {(DataSnapshot) in
                    if (DataSnapshot.childrenCount > 0){
-                       //self.taskList.removeAll()
+                    taskArray.removeAll()
                        for tasks in DataSnapshot.children.allObjects as! [DataSnapshot]{
                            let taskObject = tasks.value as? [String : AnyObject]
                            let taskName = taskObject?["taskName"]
@@ -26,15 +30,17 @@ public class TaskManager{
                            let id = taskObject?["Id"]
                            
                            let task = TaskModel(id: id as! String?, taskName: taskName as! String?, taskDesc: taskDesc as! String?)
-                           //self.taskList.append(task)
-                        taskArray.append(task)
-                            
                            
+                         taskArray.append(task)
+                        
+                    
                        }
                    }
-                   //print(self.taskList)
-                   //self.Tabletaskview.reloadData()
+                
+                completion(taskArray)
                })
-        return taskArray
+        
+      
+        
     }
 }
