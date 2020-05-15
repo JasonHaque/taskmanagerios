@@ -43,4 +43,40 @@ public class TaskManager{
       
         
     }
+    
+    func saveTask(taskName:String,taskDesc:String){
+        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
+        let user = String(email[0])
+        let ref = Database.database().reference()
+        let key = ref.child("Users").child(user).childByAutoId().key
+        let taskdata = [
+            "Id" : key,
+            "taskName" : taskName,
+            "taskDesc" : taskDesc
+        ]
+        ref.child("Users").child(user).child((key)!).setValue(taskdata)
+               
+               
+    }
+    
+    func updateTask(id : String,name : String,desc:String){
+           let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
+           let user = String(email[0])
+           let ref = Database.database().reference()
+           let taskdata = [
+                      "Id" : id,
+                      "taskName" : name,
+                      "taskDesc" : desc
+                  ]
+           ref.child("Users").child(user).child(id).setValue(taskdata)
+           //TaskErrorlabel.text = "Successfully updated data"
+       }
+    
+    func deleteTask(id:String){
+        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
+        let user = String(email[0])
+        let ref = Database.database().reference()
+        ref.child("Users").child(user).child(id).setValue(nil)
+        //TaskErrorlabel.text = "Successfully deleted data"
+    }
 }

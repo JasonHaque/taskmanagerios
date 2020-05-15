@@ -19,8 +19,8 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 150
     }
     
-  /*  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = taskList[indexPath.row]
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let task = dummyTasks[indexPath.row]
         let alertController = UIAlertController(title: task.taskName, message: "New Task Desc" ,preferredStyle: .alert)
         
         let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
@@ -28,11 +28,13 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
             let taskName = alertController.textFields?[0].text
             let taskDesc = alertController.textFields?[1].text
             
-            self.updateTask(id: id!, name: taskName!, desc: taskDesc!)
+            self.model.updateTask(id: id!, name: taskName!, desc: taskDesc!)
+           
             
         }
         let deleteAction = UIAlertAction(title: "Delete", style: .default){(_) in
-            self.deleteTask(id: task.id!)
+            self.model.deleteTask(id: task.id!)
+            
         }
         alertController.addTextField { (UITextField) in
             UITextField.text = task.taskName
@@ -43,7 +45,7 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         alertController.addAction(updateAction)
         alertController.addAction(deleteAction)
         present(alertController,animated: true,completion: nil)
-    } */
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskTableViewCell
@@ -97,18 +99,7 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
             return
         }
         TaskErrorlabel.text = ""
-        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
-        let user = String(email[0])
-        let ref = Database.database().reference()
-        let key = ref.child("Users").child(user).childByAutoId().key
-        let taskdata = [
-            "Id" : key,
-            "taskName" : taskName,
-            "taskDesc" : taskDescription
-        ]
-        ref.child("Users").child(user).child((key)!).setValue(taskdata)
-        TaskErrorlabel.text = "Successfully saved data"
-        
+        model.saveTask(taskName: taskName, taskDesc: taskDescription)
     }
     
     func verifyInputs(_ taskName:String,_ taskDescription:String)-> String{
@@ -117,26 +108,9 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         return ""
     }
-    func updateTask(id : String,name : String,desc:String){
-        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
-        let user = String(email[0])
-        let ref = Database.database().reference()
-        let taskdata = [
-                   "Id" : id,
-                   "taskName" : name,
-                   "taskDesc" : desc
-               ]
-        ref.child("Users").child(user).child(id).setValue(taskdata)
-        TaskErrorlabel.text = "Successfully updated data"
-    }
+   
     
-    func deleteTask(id:String){
-        let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
-        let user = String(email[0])
-        let ref = Database.database().reference()
-        ref.child("Users").child(user).child(id).setValue(nil)
-        TaskErrorlabel.text = "Successfully deleted data"
-    }
+    
     
 
 }
