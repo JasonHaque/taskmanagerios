@@ -11,52 +11,8 @@ import Firebase
 class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummyTasks.count
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        return 150
-    }
     
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = dummyTasks[indexPath.row]
-        let alertController = UIAlertController(title: task.taskName, message: "New Task Desc" ,preferredStyle: .alert)
-        
-        let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
-            let id = task.id
-            let taskName = alertController.textFields?[0].text
-            let taskDesc = alertController.textFields?[1].text
-            
-            self.model.updateTask(id: id!, name: taskName!, desc: taskDesc!)
-           
-            
-        }
-        let deleteAction = UIAlertAction(title: "Delete", style: .default){(_) in
-            self.model.deleteTask(id: task.id!)
-            
-        }
-        alertController.addTextField { (UITextField) in
-            UITextField.text = task.taskName
-        }
-        alertController.addTextField { (UITextField) in
-            UITextField.text = task.taskDesc
-        }
-        alertController.addAction(updateAction)
-        alertController.addAction(deleteAction)
-        present(alertController,animated: true,completion: nil)
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskTableViewCell
-        let task : TaskModel
-        task = dummyTasks[indexPath.row]
-        print("dummy data \(dummyTasks[indexPath.row])")
-        cell.taskName.text = task.taskName
-        cell.taskDesc.text = task.taskDesc
-        
-        return cell
-    }
     
     
 
@@ -108,6 +64,55 @@ class NewTaskViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         return ""
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return dummyTasks.count
+     }
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+         return 150
+     }
+     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let task = dummyTasks[indexPath.row]
+         let alertController = UIAlertController(title: task.taskName, message: "New Task Desc" ,preferredStyle: .alert)
+         
+         let updateAction = UIAlertAction(title: "Update", style: .default){(_) in
+             let id = task.id
+             let taskName = alertController.textFields?[0].text
+             let taskDesc = alertController.textFields?[1].text
+             
+             self.model.updateTask(id: id!, name: taskName!, desc: taskDesc!)
+             
+            
+             
+         }
+         let deleteAction = UIAlertAction(title: "Delete", style: .default){(_) in
+             self.model.deleteTask(id: task.id!)
+             
+             
+         }
+         alertController.addTextField { (UITextField) in
+             UITextField.text = task.taskName
+         }
+         alertController.addTextField { (UITextField) in
+             UITextField.text = task.taskDesc
+         }
+         alertController.addAction(updateAction)
+         alertController.addAction(deleteAction)
+         present(alertController,animated: true,completion: nil)
+     }
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TaskTableViewCell
+         let task : TaskModel
+         task = dummyTasks[indexPath.row]
+         print("dummy data \(dummyTasks[indexPath.row])")
+         cell.taskName.text = task.taskName
+         cell.taskDesc.text = task.taskDesc
+         
+         return cell
+     }
    
     
     

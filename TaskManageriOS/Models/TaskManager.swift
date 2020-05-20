@@ -44,11 +44,14 @@ public class TaskManager{
         
     }
     
-    func saveTask(taskName:String,taskDesc:String){
+    func saveTask(taskName:String,taskDesc:String,id:String = ""){
         let email = (Auth.auth().currentUser?.email)!.split(separator: "@")
         let user = String(email[0])
         let ref = Database.database().reference()
         let key = ref.child("Users").child(user).childByAutoId().key
+        
+       
+        
         let taskdata = [
             "Id" : key,
             "taskName" : taskName,
