@@ -12,6 +12,9 @@
 		967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D4250BF7D2001A9956 /* ProfileViewController.swift */; };
 		967173D8250BF992001A9956 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D7250BF992001A9956 /* LogInViewController.swift */; };
 		967173DA250BF9B2001A9956 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D9250BF9B2001A9956 /* RegistrationViewController.swift */; };
+		967173DC250BF9E0001A9956 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173DB250BF9E0001A9956 /* AuthManager.swift */; };
+		967173DE250BF9F4001A9956 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173DD250BF9F4001A9956 /* DatabaseManager.swift */; };
+		967173E0250BFA04001A9956 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173DF250BFA04001A9956 /* StorageManager.swift */; };
 		96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C58058243A73FF008CB517 /* AppDelegate.swift */; };
 		96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5805A243A73FF008CB517 /* SceneDelegate.swift */; };
 		96C58060243A73FF008CB517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C5805E243A73FF008CB517 /* Main.storyboard */; };
@@ -28,6 +31,9 @@
 		967173D4250BF7D2001A9956 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		967173D7250BF992001A9956 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		967173D9250BF9B2001A9956 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		967173DB250BF9E0001A9956 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		967173DD250BF9F4001A9956 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		967173DF250BFA04001A9956 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		96C58055243A73FF008CB517 /* TaskManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C58058243A73FF008CB517 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C5805A243A73FF008CB517 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,9 @@
 			children = (
 				96C58058243A73FF008CB517 /* AppDelegate.swift */,
 				96C5805A243A73FF008CB517 /* SceneDelegate.swift */,
+				967173DB250BF9E0001A9956 /* AuthManager.swift */,
+				967173DD250BF9F4001A9956 /* DatabaseManager.swift */,
+				967173DF250BFA04001A9956 /* StorageManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -275,7 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967173DE250BF9F4001A9956 /* DatabaseManager.swift in Sources */,
 				967173DA250BF9B2001A9956 /* RegistrationViewController.swift in Sources */,
+				967173DC250BF9E0001A9956 /* AuthManager.swift in Sources */,
+				967173E0250BFA04001A9956 /* StorageManager.swift in Sources */,
 				967173D3250BF7BE001A9956 /* HomeUIViewController.swift in Sources */,
 				96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */,
 				967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */,
