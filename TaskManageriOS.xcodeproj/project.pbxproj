@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		96514ED3243C9B57009A13B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */; };
+		967173D3250BF7BE001A9956 /* HomeUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D2250BF7BE001A9956 /* HomeUIViewController.swift */; };
+		967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D4250BF7D2001A9956 /* ProfileViewController.swift */; };
 		96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C58058243A73FF008CB517 /* AppDelegate.swift */; };
 		96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C5805A243A73FF008CB517 /* SceneDelegate.swift */; };
 		96C58060243A73FF008CB517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96C5805E243A73FF008CB517 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 		664C5B9654D49DD0CCFAAF8A /* Pods_TaskManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891348AABD9654C97A732B58 /* Pods-TaskManageriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManageriOS.release.xcconfig"; path = "Target Support Files/Pods-TaskManageriOS/Pods-TaskManageriOS.release.xcconfig"; sourceTree = "<group>"; };
 		96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		967173D2250BF7BE001A9956 /* HomeUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIViewController.swift; sourceTree = "<group>"; };
+		967173D4250BF7D2001A9956 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		96C58055243A73FF008CB517 /* TaskManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96C58058243A73FF008CB517 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96C5805A243A73FF008CB517 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 		967173CB250BF6F0001A9956 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				967173D0250BF78F001A9956 /* StoryBoards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -52,6 +57,7 @@
 		967173CC250BF6F7001A9956 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				967173D1250BF7A9001A9956 /* CoreUI */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -70,6 +76,24 @@
 				96C5805A243A73FF008CB517 /* SceneDelegate.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		967173D0250BF78F001A9956 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				96C5805E243A73FF008CB517 /* Main.storyboard */,
+				96C58063243A7401008CB517 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		967173D1250BF7A9001A9956 /* CoreUI */ = {
+			isa = PBXGroup;
+			children = (
+				967173D2250BF7BE001A9956 /* HomeUIViewController.swift */,
+				967173D4250BF7D2001A9956 /* ProfileViewController.swift */,
+			);
+			path = CoreUI;
 			sourceTree = "<group>";
 		};
 		96C5804C243A73FF008CB517 = {
@@ -97,10 +121,8 @@
 				967173CD250BF6FE001A9956 /* Models */,
 				967173CC250BF6F7001A9956 /* Controllers */,
 				967173CB250BF6F0001A9956 /* Views */,
-				96C5805E243A73FF008CB517 /* Main.storyboard */,
 				96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */,
 				96C58061243A7401008CB517 /* Assets.xcassets */,
-				96C58063243A7401008CB517 /* LaunchScreen.storyboard */,
 				96C58066243A7401008CB517 /* Info.plist */,
 			);
 			path = TaskManageriOS;
@@ -239,7 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967173D3250BF7BE001A9956 /* HomeUIViewController.swift in Sources */,
 				96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */,
+				967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */,
 				96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
