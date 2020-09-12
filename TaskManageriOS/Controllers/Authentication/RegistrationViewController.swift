@@ -161,6 +161,19 @@ class RegistrationViewController: UIViewController {
         
         //call sign Up
         
+        Authmanager.shared.createNewUser(email: email, userName: userName, password: password) { [weak self] success in
+            
+            if success{
+                //successfully created user
+                self?.navigationController?.dismiss(animated: true, completion: nil)
+            }
+            else{
+                //user creation failed
+                self?.presentRegistrationError()
+                
+            }
+        }
+        
     }
     
     // alert

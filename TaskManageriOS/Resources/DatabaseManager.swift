@@ -15,4 +15,8 @@ public class DatabaseManager{
     static let shared = DatabaseManager()
     
     //MARK:- public function calls
+    
+    public func userExists(){
+        
+    }
 }
