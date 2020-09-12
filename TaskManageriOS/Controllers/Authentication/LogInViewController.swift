@@ -132,11 +132,33 @@ class LogInViewController: UIViewController {
         EmailTextField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
+        
+        
+        guard let email = EmailTextField.text , let password = passwordField.text,
+            !email.isEmpty, !password.isEmpty , password.count >= 6 else {
+                
+                presentloginError()
+            
+                return
+        }
+        
         //Call LogIn
         
         
+    }
+    
+    //alert function
+    
+    func presentloginError(){
+        
+        let alert = UIAlertController(title: "Woops", message: "An error occured while loggin in", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        
+        present(alert,animated: true)
         
     }
+    
 
    
 

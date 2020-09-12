@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Firebase
+
+public class StorageManager{
+    static let shared = StorageManager()
+    
+    //MARK:- public function calls
+}

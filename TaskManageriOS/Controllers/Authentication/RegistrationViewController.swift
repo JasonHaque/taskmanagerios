@@ -149,7 +149,29 @@ class RegistrationViewController: UIViewController {
         EmailTextField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
+        
+        guard let email = EmailTextField.text , let password = passwordField.text, let userName = UserNameField.text,
+            !email.isEmpty, !password.isEmpty , !userName.isEmpty,
+            password.count >= 6 else {
+                
+                presentRegistrationError()
+                
+                return
+        }
+        
         //call sign Up
+        
+    }
+    
+    // alert
+    
+    func presentRegistrationError(){
+        
+        let alert = UIAlertController(title: "Woops", message: "An error occured while registering new user", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        
+        present(alert,animated: true)
         
     }
     
