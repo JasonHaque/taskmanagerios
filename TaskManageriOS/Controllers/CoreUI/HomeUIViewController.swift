@@ -17,6 +17,11 @@ class HomeUIViewController: UIViewController {
         checkAuthStatus()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        checkAuthStatus()
+    }
     
     private func checkAuthStatus(){
         
