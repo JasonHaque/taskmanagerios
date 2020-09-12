@@ -60,6 +60,8 @@ class LogInViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
         
+        logInButton.addTarget(self, action: #selector(didTapLogIn), for: .touchUpInside)
+        
     }
     
     
@@ -71,6 +73,10 @@ class LogInViewController: UIViewController {
         vc.title = "Create User Account"
         
         navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @objc func didTapLogIn(){
         
     }
 
