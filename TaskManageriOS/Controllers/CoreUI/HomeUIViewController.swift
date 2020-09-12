@@ -7,24 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeUIViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        checkAuthStatus()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func checkAuthStatus(){
+        
+        if Auth.auth().currentUser == nil{
+            
+            let vc = LogInViewController()
+            vc.title = "Log In"
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            present(nav,animated: false)
+        }
+        
     }
-    */
+
+  
 
 }
