@@ -73,6 +73,9 @@ class LogInViewController: UIViewController {
 
         view.backgroundColor = .systemBackground
         
+        EmailTextField.delegate = self
+        passwordField.delegate = self
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
         
         logInButton.addTarget(self, action: #selector(didTapLogIn), for: .touchUpInside)
@@ -126,8 +129,32 @@ class LogInViewController: UIViewController {
     
     @objc func didTapLogIn(){
         
+        EmailTextField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+        //Call LogIn
+        
     }
 
    
 
+}
+
+//extension TextField delegate
+
+extension LogInViewController : UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == EmailTextField {
+            passwordField.becomeFirstResponder()
+        }
+        
+        else if textField == passwordField{
+            didTapLogIn()
+        }
+        
+        return true
+    }
+    
 }
