@@ -7,6 +7,8 @@ target 'TaskManageriOS' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+
   # Pods for TaskManageriOS
 
 end
