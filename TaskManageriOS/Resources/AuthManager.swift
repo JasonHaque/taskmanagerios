@@ -17,7 +17,16 @@ public class Authmanager {
     //MARK: - public function calls
     
     public func logInUser(email : String , password : String , completion : @escaping (Bool) -> Void){
-        completion(true)
+        
+        Auth.auth().signIn(withEmail: email, password: password) { result , error in
+            
+            guard let result = result , error == nil else{
+                completion(false)
+                return
+            }
+            completion(true)
+            return
+        }
         
     }
     

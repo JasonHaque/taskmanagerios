@@ -137,7 +137,7 @@ class LogInViewController: UIViewController {
         guard let email = EmailTextField.text , let password = passwordField.text,
             !email.isEmpty, !password.isEmpty , password.count >= 6 else {
                 
-                presentloginError()
+                presentloginError(message: "Fill up the fields properly")
             
                 return
         }
@@ -154,7 +154,7 @@ class LogInViewController: UIViewController {
             else{
                 //log in failure
                 
-                
+                self?.presentloginError(message: "Error occured while logging in")
             }
         }
         
@@ -163,9 +163,9 @@ class LogInViewController: UIViewController {
     
     //alert function
     
-    func presentloginError(){
+    func presentloginError(message : String){
         
-        let alert = UIAlertController(title: "Woops", message: "An error occured while loggin in", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Woops", message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         
