@@ -16,11 +16,12 @@ public class Authmanager {
     
     //MARK: - public function calls
     
-    public func logInUser(){
+    public func logInUser(email : String , password : String , completion : @escaping (Bool) -> Void){
+        completion(true)
         
     }
     
-    public func createNewUser(){
+    public func createNewUser(email : String , userName : String, password : String , completion : @escaping (Bool) -> Void){
         
     }
 }

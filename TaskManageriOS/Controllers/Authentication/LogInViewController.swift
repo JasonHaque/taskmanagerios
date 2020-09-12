@@ -144,6 +144,20 @@ class LogInViewController: UIViewController {
         
         //Call LogIn
         
+        Authmanager.shared.logInUser(email: email, password: password) {[weak self] success in
+            
+            if success{
+                //successfully logged in
+                self?.navigationController?.dismiss(animated: true, completion: nil)
+                
+            }
+            else{
+                //log in failure
+                
+                
+            }
+        }
+        
         
     }
     
