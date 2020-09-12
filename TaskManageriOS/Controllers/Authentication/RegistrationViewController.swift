@@ -79,7 +79,11 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
+        EmailTextField.delegate = self
+        UserNameField.delegate = self
+        passwordField.delegate = self
         
+        RegisterButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         
         scrollView.addSubview(UserNameField)
         scrollView.addSubview(EmailTextField)
@@ -88,9 +92,40 @@ class RegistrationViewController: UIViewController {
         view.addSubview(scrollView)
         
         
+        
+    }
+    
+    
+    //objc methods
+    
+    @objc func didTapSignUp(){
+        
+        UserNameField.resignFirstResponder()
+        EmailTextField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+        //call sign Up
+        
     }
     
     
     
     
+}
+
+extension RegistrationViewController : UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == UserNameField {
+            EmailTextField.becomeFirstResponder()
+        }
+        else if textField == EmailTextField {
+            passwordField.becomeFirstResponder()
+        }
+        else if textField == passwordField{
+            didTapSignUp()
+        }
+        
+        return true
+    }
 }
