@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import FirebaseAuth
+
+public class Authmanager {
+    
+    
+    static let shared = Authmanager()
+    
+    //MARK: - public function calls
+    
+    public func logInUser(){
+        
+    }
+    
+    public func createNewUser(){
+        
+    }
+}

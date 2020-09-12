@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseDatabase
+
+
+public class DatabaseManager{
+    static let shared = DatabaseManager()
+    
+    //MARK:- public function calls
+}
