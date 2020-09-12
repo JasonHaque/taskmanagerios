@@ -10,6 +10,21 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    private let scrollView : UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.clipsToBounds = true
+        return scrollView
+    }()
+    
+    private let imageView : UIImageView = {
+        
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo")
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
+    }()
+    
     private let EmailTextField : UITextField = {
        let field = UITextField()
         field.autocapitalizationType = .none
@@ -62,8 +77,41 @@ class LogInViewController: UIViewController {
         
         logInButton.addTarget(self, action: #selector(didTapLogIn), for: .touchUpInside)
         
+        scrollView.addSubview(imageView)
+        scrollView.addSubview(EmailTextField)
+        scrollView.addSubview(passwordField)
+        scrollView.addSubview(logInButton)
+        view.addSubview(scrollView)
+        
     }
     
+    
+    //set up frames
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        scrollView.frame = view.bounds
+        let size = view.width/3
+        
+        imageView.frame = CGRect(x: (view.width - size)/2,
+                                 y: 20,
+                                 width: size,
+                                 height: size)
+        
+        EmailTextField.frame = CGRect(x: 30,
+                                      y: imageView.bottom + 10,
+                                  width: scrollView.width-60,
+                                  height: 52)
+        passwordField.frame = CGRect(x: 30,
+                                     y: EmailTextField.bottom+10,
+                                     width: scrollView.width-60,
+                                     height: 52)
+        logInButton.frame = CGRect(x: 30,
+                                   y: passwordField.bottom+10,
+                                   width: scrollView.width-60,
+                                   height: 52)
+    }
     
     //methods
     

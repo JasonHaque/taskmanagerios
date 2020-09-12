@@ -61,6 +61,7 @@
 		967173CB250BF6F0001A9956 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96C58061243A7401008CB517 /* Assets.xcassets */,
 				967173D0250BF78F001A9956 /* StoryBoards */,
 			);
 			path = Views;
@@ -148,7 +149,6 @@
 				967173CC250BF6F7001A9956 /* Controllers */,
 				967173CB250BF6F0001A9956 /* Views */,
 				96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */,
-				96C58061243A7401008CB517 /* Assets.xcassets */,
 				96C58066243A7401008CB517 /* Info.plist */,
 			);
 			path = TaskManageriOS;
