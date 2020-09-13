@@ -10,9 +10,20 @@ import UIKit
 import Firebase
 
 class HomeUIViewController: UIViewController {
+    
+    private let tableView : UITableView = {
+        let table = UITableView()
+        
+        return table
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .systemBackground
+        title = "Tasks"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(didTapCreateNewTask))
 
         checkAuthStatus()
     }
@@ -33,6 +44,12 @@ class HomeUIViewController: UIViewController {
             nav.modalPresentationStyle = .fullScreen
             present(nav,animated: false)
         }
+        
+    }
+    
+    //objc methods
+    
+    @objc func didTapCreateNewTask(){
         
     }
 
