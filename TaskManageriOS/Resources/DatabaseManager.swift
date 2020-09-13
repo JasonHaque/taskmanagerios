@@ -165,6 +165,23 @@ extension DatabaseManager{
     public func deleteTask(with id : String, completion: @escaping (Bool) -> Void){
         
         //TODO: - add delete code
+        
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else{
+            return
+        }
+        
+        database.child("\(email.safeDatabaseKey())/tasks").child(id).setValue(nil,withCompletionBlock: { error, _ in
+            
+            guard  error == nil else{
+                completion(false)
+                return
+            }
+            
+            completion(true)
+            return
+            
+        })
+        
     }
     
 }

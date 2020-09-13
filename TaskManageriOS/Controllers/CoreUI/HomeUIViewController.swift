@@ -126,18 +126,24 @@ extension HomeUIViewController : UITableViewDelegate,UITableViewDataSource{
         if editingStyle == .delete{
             let id = data[indexPath.row].taskId
             
-            tableView.beginUpdates()
+            //tableView.beginUpdates()
             
             DatabaseManager.shared.deleteTask(with: id) {[weak self] success in
                 if success{
+                    //tableView.deleteRows(at: [indexPath], with: .left)
+                   // self?.data.remove(at: indexPath.row)
+                    
+                    DispatchQueue.main.async {
+                        
+                        tableView.reloadData()
+                    }
                     
                 }
                 else{
-                    self?.data.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .left)
+                    
                 }
             }
-            tableView.endUpdates()
+           // tableView.endUpdates()
         }
     }
 }
