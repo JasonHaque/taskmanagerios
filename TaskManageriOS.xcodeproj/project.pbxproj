@@ -10,6 +10,8 @@
 		9650CA4B250D148700ABDA96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650CA4A250D148700ABDA96 /* Extensions.swift */; };
 		96514ED3243C9B57009A13B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */; };
 		9657929D250DF4DF009C6426 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657929C250DF4DF009C6426 /* ProfileTableViewCell.swift */; };
+		9657929F250DFC11009C6426 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657929E250DFC11009C6426 /* NewTaskViewController.swift */; };
+		965792A1250DFC3A009C6426 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965792A0250DFC3A009C6426 /* ProfileViewModel.swift */; };
 		967173D3250BF7BE001A9956 /* HomeUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D2250BF7BE001A9956 /* HomeUIViewController.swift */; };
 		967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D4250BF7D2001A9956 /* ProfileViewController.swift */; };
 		967173D8250BF992001A9956 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D7250BF992001A9956 /* LogInViewController.swift */; };
@@ -31,6 +33,8 @@
 		9650CA4A250D148700ABDA96 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9657929C250DF4DF009C6426 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		9657929E250DFC11009C6426 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		965792A0250DFC3A009C6426 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		967173D2250BF7BE001A9956 /* HomeUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIViewController.swift; sourceTree = "<group>"; };
 		967173D4250BF7D2001A9956 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		967173D7250BF992001A9956 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			children = (
 				967173D6250BF975001A9956 /* Authentication */,
 				967173D1250BF7A9001A9956 /* CoreUI */,
+				9657929E250DFC11009C6426 /* NewTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 		967173CD250BF6FE001A9956 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				965792A0250DFC3A009C6426 /* ProfileViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,6 +314,8 @@
 				96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */,
 				967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */,
 				967173D8250BF992001A9956 /* LogInViewController.swift in Sources */,
+				965792A1250DFC3A009C6426 /* ProfileViewModel.swift in Sources */,
+				9657929F250DFC11009C6426 /* NewTaskViewController.swift in Sources */,
 				96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
