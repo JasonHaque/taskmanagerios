@@ -97,6 +97,25 @@ class ShowTaskViewController: UIViewController {
         
         print("Will Update")
         
+        guard let task = task ,let updatedTaskName = taskNameField.text , let updatedDescription = taskDescriptionField.text ,
+            !updatedTaskName.isEmpty , !updatedDescription.isEmpty else {
+            return
+        }
+        
+        DatabaseManager.shared.updateTask(with: task.taskId, taskName: updatedTaskName, taskDesc: updatedDescription, completion: { [weak self] updated in
+            
+            
+            if updated{
+                
+            }
+            else{
+                
+            }
+            
+            
+            
+        })
+        
     }
 
     

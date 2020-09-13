@@ -132,10 +132,14 @@ extension DatabaseManager{
         
     }
     
+    public func updateTask(with taskId : String , taskName : String , taskDesc : String, completion : @escaping (Bool) -> Void){
+        
+        
+        
+        
+        
+    }
+    
 }
 
-public struct Task {
-    let taskId : String
-    let taskName : String
-    let taskDesc : String
-}
+
