@@ -32,5 +32,29 @@ public class Authmanager {
     
     public func createNewUser(email : String , userName : String, password : String , completion : @escaping (Bool) -> Void){
         
+        Auth.auth().createUser(withEmail: email, password: password) { result , error in
+            
+            guard let result = result , error == nil else{
+                completion(false)
+                return
+            }
+            
+            DatabaseManager.shared.createNewUser(email: email, userName: userName) { success in
+                
+                if success{
+                    print("User registered")
+                    completion(true)
+                    return
+                }
+                else{
+                    
+                    print("Error creating user")
+                    completion(false)
+                    result
+                    
+                }
+            }
+        }
+        
     }
 }
