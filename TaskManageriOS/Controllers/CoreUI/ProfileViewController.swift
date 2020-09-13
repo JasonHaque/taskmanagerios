@@ -46,6 +46,8 @@ class ProfileViewController: UIViewController {
             
             //add log out code
             print("Logging you out")
+            
+            self.logOut()
         }))
         
         view.addSubview(tableView)
@@ -56,6 +58,25 @@ class ProfileViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         tableView.frame = view.bounds
+    }
+    
+    func logOut(){
+        Authmanager.shared.logUserOut { [weak self] loggedOut in
+            if loggedOut{
+                DispatchQueue.main.async {
+                    let vc = LogInViewController()
+                    vc.title = "Log In"
+                    let nav = UINavigationController(rootViewController: vc)
+                    nav.modalPresentationStyle = .fullScreen
+                    self?.present(nav,animated: false)
+                }
+            }
+            else{
+                
+                //this shouldn't bloody happen
+                
+            }
+        }
     }
 
 }

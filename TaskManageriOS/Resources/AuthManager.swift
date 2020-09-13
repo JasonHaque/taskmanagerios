@@ -75,4 +75,20 @@ public class Authmanager {
         
         
     }
+    
+    public func logUserOut(completion : @escaping (Bool) -> Void){
+        
+        do{
+            try Auth.auth().signOut()
+            completion(true)
+            return
+        }
+        catch{
+            print(error)
+            completion(false)
+            return
+            
+        }
+        
+    }
 }
