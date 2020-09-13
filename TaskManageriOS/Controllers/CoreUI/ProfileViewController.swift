@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
             //add log out code
             print("Logging you out")
             
-            self.logOut()
+            self.showLogOutAction()
         }))
         
         view.addSubview(tableView)
@@ -48,6 +48,18 @@ class ProfileViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         tableView.frame = view.bounds
+    }
+    
+    func showLogOutAction(){
+        let actionsheet = UIAlertController(title: "Log Out", message: "Are you sure you want to proceed?", preferredStyle: .actionSheet)
+        
+        actionsheet.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { [weak self] _ in
+            
+            self?.logOut()
+        }))
+        actionsheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(actionsheet,animated: true)
     }
     
     func logOut(){
