@@ -30,8 +30,11 @@ class ProfileViewController: UIViewController {
 
         title = "Profile"
         
-        data.append(ProfileViewModel(viewModelType: .info, title: "Name : Will get a name soon", handler: nil))
-        data.append(ProfileViewModel(viewModelType: .info, title: "Email : Will get a email soon", handler: nil))
+        let name = UserDefaults.standard.value(forKey: "userName") as? String
+        let email = UserDefaults.standard.value(forKey: "email") as? String
+        
+        data.append(ProfileViewModel(viewModelType: .info, title: "Name : \(name!)", handler: nil))
+        data.append(ProfileViewModel(viewModelType: .info, title: "Email : \(email!)", handler: nil))
         data.append(ProfileViewModel(viewModelType: .logout, title: "Log Out", handler: {
             
             //add log out code

@@ -47,6 +47,26 @@ public class DatabaseManager{
         } )
         
     }
+    
+    public func getUserName(email : String,completion: @escaping (Result <String, Error>) -> Void){
+        
+        database.child(email.safeDatabaseKey()).observeSingleEvent(of: .value) { snapshot in
+            
+            guard let value = snapshot.value as? [String : String] else{
+                completion(.failure("Error getting user Name" as! Error))
+                return
+            }
+            guard let userName = value["username"] as? String else{
+                completion(.failure("Error parsing user Name" as! Error))
+                return
+            }
+            print(userName)
+            
+            completion(.success(userName))
+            return
+        }
+        
+    }
 }
 
 //MARK: - public function calls for firebase calls for saving and getting data

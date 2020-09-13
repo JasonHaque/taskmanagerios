@@ -24,8 +24,29 @@ public class Authmanager {
                 completion(false)
                 return
             }
-            completion(true)
-            return
+            
+            DatabaseManager.shared.getUserName(email: email) { result in
+                
+                switch result{
+                    
+                case .success(let userName):
+                    UserDefaults.standard.set(email, forKey: "email")
+                    UserDefaults.standard.set(userName, forKey: "userName")
+                    
+                    print(UserDefaults.standard.value(forKey: "email") as? String)
+                    print(UserDefaults.standard.value(forKey: "userName") as? String)
+                    completion(true)
+                    return
+                    
+                case .failure(let error):
+                    print("Error found \(error)")
+                    completion(false)
+                    return
+                }
+            }
+            
+            
+            
         }
         
     }
@@ -56,6 +77,8 @@ public class Authmanager {
                         
                         if success{
                             print("User registered")
+                            UserDefaults.standard.set(email, forKey: "email")
+                            UserDefaults.standard.set(userName, forKey: "userName")
                             completion(true)
                             return
                         }
