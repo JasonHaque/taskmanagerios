@@ -72,11 +72,15 @@ class NewTaskViewController: UIViewController {
         
         //proceed to call db and save data
         
-        DatabaseManager.shared.saveTask(with: taskName, taskDescription: taskDesc) { dataSaved in
+        DatabaseManager.shared.saveTask(with: taskName, taskDescription: taskDesc) {[weak self] dataSaved in
             
             if dataSaved{
+                DispatchQueue.main.async {
+                    print("Data saved")
+                    
+                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                }
                 
-                print("Data saved")
             }
             else{
                 
@@ -85,6 +89,17 @@ class NewTaskViewController: UIViewController {
             }
             
         }
+        
+    }
+    
+    //show error saving data alert
+    
+    func showErrorWhileSaving(){
+        let alert = UIAlertController(title: "Oops", message: "there was an error while saving data", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        
+        present(alert,animated: true)
         
     }
 
