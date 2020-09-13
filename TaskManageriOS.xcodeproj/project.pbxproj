@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9650CA4B250D148700ABDA96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650CA4A250D148700ABDA96 /* Extensions.swift */; };
 		96514ED3243C9B57009A13B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */; };
+		9657929D250DF4DF009C6426 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657929C250DF4DF009C6426 /* ProfileTableViewCell.swift */; };
 		967173D3250BF7BE001A9956 /* HomeUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D2250BF7BE001A9956 /* HomeUIViewController.swift */; };
 		967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D4250BF7D2001A9956 /* ProfileViewController.swift */; };
 		967173D8250BF992001A9956 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967173D7250BF992001A9956 /* LogInViewController.swift */; };
@@ -29,6 +30,7 @@
 		891348AABD9654C97A732B58 /* Pods-TaskManageriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManageriOS.release.xcconfig"; path = "Target Support Files/Pods-TaskManageriOS/Pods-TaskManageriOS.release.xcconfig"; sourceTree = "<group>"; };
 		9650CA4A250D148700ABDA96 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9657929C250DF4DF009C6426 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		967173D2250BF7BE001A9956 /* HomeUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIViewController.swift; sourceTree = "<group>"; };
 		967173D4250BF7D2001A9956 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		967173D7250BF992001A9956 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -58,9 +60,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9657929B250DF4B5009C6426 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				9657929C250DF4DF009C6426 /* ProfileTableViewCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
 		967173CB250BF6F0001A9956 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9657929B250DF4B5009C6426 /* TableCells */,
 				96C58061243A7401008CB517 /* Assets.xcassets */,
 				967173D0250BF78F001A9956 /* StoryBoards */,
 			);
@@ -290,6 +301,7 @@
 				967173DE250BF9F4001A9956 /* DatabaseManager.swift in Sources */,
 				967173DA250BF9B2001A9956 /* RegistrationViewController.swift in Sources */,
 				967173DC250BF9E0001A9956 /* AuthManager.swift in Sources */,
+				9657929D250DF4DF009C6426 /* ProfileTableViewCell.swift in Sources */,
 				967173E0250BFA04001A9956 /* StorageManager.swift in Sources */,
 				967173D3250BF7BE001A9956 /* HomeUIViewController.swift in Sources */,
 				9650CA4B250D148700ABDA96 /* Extensions.swift in Sources */,
