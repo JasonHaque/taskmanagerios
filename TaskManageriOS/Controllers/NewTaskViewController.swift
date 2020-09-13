@@ -64,7 +64,24 @@ class NewTaskViewController: UIViewController {
     
     @objc func didTapSaveButton(){
         
-        print("Started Saving yall")
+        guard let taskName = taskNameField.text , let taskDesc = taskDescriptionField.text,
+            !taskName.isEmpty , !taskDesc.isEmpty else {
+                //show an error here
+                return
+        }
+        
+        //proceed to call db and save data
+        
+        DatabaseManager.shared.saveTask(with: taskName, taskDescription: taskDesc) { dataSaved in
+            
+            if dataSaved{
+                
+            }
+            else{
+                
+            }
+            
+        }
         
     }
 

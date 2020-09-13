@@ -53,4 +53,10 @@ public class DatabaseManager{
 
 extension DatabaseManager{
     
+    public func saveTask(with taskName : String , taskDescription : String , completion : @escaping (Bool) -> Void){
+        
+        
+        
+    }
+    
 }
