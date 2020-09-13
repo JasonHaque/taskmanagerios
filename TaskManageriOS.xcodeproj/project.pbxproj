@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		964B93EC250E959D003618CC /* ShowTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964B93EB250E959D003618CC /* ShowTaskViewController.swift */; };
 		9650CA4B250D148700ABDA96 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9650CA4A250D148700ABDA96 /* Extensions.swift */; };
 		96514ED3243C9B57009A13B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */; };
 		9657929D250DF4DF009C6426 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9657929C250DF4DF009C6426 /* ProfileTableViewCell.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		664C5B9654D49DD0CCFAAF8A /* Pods_TaskManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		891348AABD9654C97A732B58 /* Pods-TaskManageriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManageriOS.release.xcconfig"; path = "Target Support Files/Pods-TaskManageriOS/Pods-TaskManageriOS.release.xcconfig"; sourceTree = "<group>"; };
+		964B93EB250E959D003618CC /* ShowTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTaskViewController.swift; sourceTree = "<group>"; };
 		9650CA4A250D148700ABDA96 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96514ED2243C9B57009A13B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9657929C250DF4DF009C6426 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				967173D2250BF7BE001A9956 /* HomeUIViewController.swift */,
 				967173D4250BF7D2001A9956 /* ProfileViewController.swift */,
+				964B93EB250E959D003618CC /* ShowTaskViewController.swift */,
 			);
 			path = CoreUI;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				96C58059243A73FF008CB517 /* AppDelegate.swift in Sources */,
 				967173D5250BF7D2001A9956 /* ProfileViewController.swift in Sources */,
 				967173D8250BF992001A9956 /* LogInViewController.swift in Sources */,
+				964B93EC250E959D003618CC /* ShowTaskViewController.swift in Sources */,
 				965792A1250DFC3A009C6426 /* ProfileViewModel.swift in Sources */,
 				9657929F250DFC11009C6426 /* NewTaskViewController.swift in Sources */,
 				96C5805B243A73FF008CB517 /* SceneDelegate.swift in Sources */,
