@@ -75,7 +75,33 @@ extension DatabaseManager{
     
     public func saveTask(with taskName : String , taskDescription : String , completion : @escaping (Bool) -> Void){
         
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else{
+            return
+        }
         
+        guard let key = database.child("\(email.safeDatabaseKey())/tasks").childByAutoId().key else{
+            completion(false)
+            print("error getting key")
+            return
+        }
+        
+        let task = [
+            "id" : key,
+            "task_name" : taskName,
+            "task_desc" : taskDescription
+        ]
+        
+        database.child("\(email.safeDatabaseKey())/tasks").child(key).setValue(task,withCompletionBlock: { error ,_ in
+            
+            guard error == nil else{
+                completion(false)
+                return
+            }
+            
+            completion(true)
+            return
+            
+        })
         
     }
     

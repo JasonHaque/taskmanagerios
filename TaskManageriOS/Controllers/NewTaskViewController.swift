@@ -76,8 +76,11 @@ class NewTaskViewController: UIViewController {
             
             if dataSaved{
                 
+                print("Data saved")
             }
             else{
+                
+                print("not saved")
                 
             }
             
