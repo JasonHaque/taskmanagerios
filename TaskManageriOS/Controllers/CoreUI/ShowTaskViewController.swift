@@ -54,13 +54,15 @@ class ShowTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Task"
+        
         view.backgroundColor = .systemBackground
         
         setUpData()
         
         view.addSubview(taskNameField)
         view.addSubview(taskDescriptionField)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(didTapUpdate))
 
        
     }
@@ -91,6 +93,11 @@ class ShowTaskViewController: UIViewController {
         taskDescriptionField.text = task.taskDesc
     }
     
+    @objc func didTapUpdate(){
+        
+        print("Will Update")
+        
+    }
 
     
 

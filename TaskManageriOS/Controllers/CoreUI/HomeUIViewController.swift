@@ -116,6 +116,6 @@ extension HomeUIViewController : UITableViewDelegate,UITableViewDataSource{
         
         let vc = ShowTaskViewController(task: model)
         
-        navigationController?.show(vc, sender: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
