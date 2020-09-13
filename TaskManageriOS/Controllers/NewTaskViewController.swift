@@ -28,7 +28,13 @@ class NewTaskViewController: UIViewController {
     private let taskDescriptionField : UITextView = {
         
         let textView = UITextView()
-        
+        textView.autocapitalizationType = .none
+        textView.autocorrectionType = .no
+        textView.font = UIFont.systemFont(ofSize: 20)
+        textView.backgroundColor = .secondarySystemBackground
+        textView.layer.cornerRadius = 12
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.lightGray.cgColor
         return textView
         
     }()
@@ -39,6 +45,7 @@ class NewTaskViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(taskNameField)
         view.addSubview(taskDescriptionField)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapSaveButton))
     }
     
     
@@ -50,9 +57,15 @@ class NewTaskViewController: UIViewController {
                                      width: view.width - 60,
                                      height: 52)
         taskDescriptionField.frame = CGRect(x: 30,
-                                            y: taskNameField.bottom + 20,
+                                            y: taskNameField.bottom + 10,
                                             width: view.width - 60,
-                                            height: 52)
+                                            height: view.height - taskNameField.height - 130)
+    }
+    
+    @objc func didTapSaveButton(){
+        
+        print("Started Saving yall")
+        
     }
 
    
