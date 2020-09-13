@@ -20,8 +20,20 @@ class ProfileTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setUp(){
+    public func setUp(with viewModel : ProfileViewModel){
         
+        self.textLabel?.text = viewModel.title
+        
+        switch viewModel.viewModelType{
+            
+        case .info:
+            self.textLabel?.textAlignment = .left
+            self.selectionStyle = .none
+        case .logout:
+            self.textLabel?.textAlignment = .center
+            self.textLabel?.textColor = .red
+            
+        }
     }
     
     
