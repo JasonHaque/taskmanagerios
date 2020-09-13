@@ -51,6 +51,13 @@ class HomeUIViewController: UIViewController {
     
     @objc func didTapCreateNewTask(){
         
+        let vc = NewTaskViewController()
+        vc.title = "Create a task"
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav,animated: false)
+        
+        
     }
 
   

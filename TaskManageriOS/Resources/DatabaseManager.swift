@@ -48,3 +48,9 @@ public class DatabaseManager{
         
     }
 }
+
+//MARK: - public function calls for firebase calls for saving and getting data
+
+extension DatabaseManager{
+    
+}

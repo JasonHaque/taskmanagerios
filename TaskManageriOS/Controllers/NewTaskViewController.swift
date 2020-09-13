@@ -9,11 +9,14 @@
 import UIKit
 
 class NewTaskViewController: UIViewController {
+    
+    
+    //add necessary views
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        
+        view.backgroundColor = .systemBackground
     }
     
 
