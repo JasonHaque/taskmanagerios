@@ -58,6 +58,9 @@ class ShowTaskViewController: UIViewController {
         view.backgroundColor = .systemBackground
         
         setUpData()
+        
+        view.addSubview(taskNameField)
+        view.addSubview(taskDescriptionField)
 
        
     }
@@ -65,6 +68,19 @@ class ShowTaskViewController: UIViewController {
         super.viewDidAppear(animated)
         
         setUpData()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        taskNameField.frame = CGRect(x: 30,
+                                     y: 100,
+                                     width: view.width - 60,
+                                     height: 52)
+        taskDescriptionField.frame = CGRect(x: 30,
+                                            y: taskNameField.bottom + 10,
+                                            width: view.width - 60,
+                                            height: view.height - taskNameField.height - 170)
     }
     
     func setUpData(){
