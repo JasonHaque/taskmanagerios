@@ -162,6 +162,11 @@ extension DatabaseManager{
         
     }
     
+    public func deleteTask(with id : String, completion: @escaping (Bool) -> Void){
+        
+        //TODO: - add delete code
+    }
+    
 }
 
 

@@ -118,4 +118,26 @@ extension HomeUIViewController : UITableViewDelegate,UITableViewDataSource{
         
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let id = data[indexPath.row].taskId
+            
+            tableView.beginUpdates()
+            
+            DatabaseManager.shared.deleteTask(with: id) {[weak self] success in
+                if success{
+                    
+                }
+                else{
+                    self?.data.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .left)
+                }
+            }
+            tableView.endUpdates()
+        }
+    }
 }
