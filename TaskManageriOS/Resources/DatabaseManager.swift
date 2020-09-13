@@ -105,4 +105,16 @@ extension DatabaseManager{
         
     }
     
+    public func getAllTasks(with email : String , completion : @escaping (Result<[Task],Error>) -> Void ){
+        
+        
+        
+    }
+    
+}
+
+public struct Task {
+    let taskId : String
+    let taskName : String
+    let taskDesc : String
 }

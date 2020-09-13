@@ -16,6 +16,8 @@ class HomeUIViewController: UIViewController {
         
         return table
     }()
+    
+    var data = [Task]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,8 @@ class HomeUIViewController: UIViewController {
         super.viewDidAppear(animated)
         
         checkAuthStatus()
+        
+        startListeningForTasks()
     }
     
     private func checkAuthStatus(){
@@ -45,6 +49,22 @@ class HomeUIViewController: UIViewController {
             present(nav,animated: false)
         }
         
+    }
+    
+    private func startListeningForTasks(){
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else{
+            return
+        }
+        DatabaseManager.shared.getAllTasks(with: email) { [weak self] result in
+            
+            switch result{
+                
+            case .success(let tasks):
+                break
+            case .failure(let error):
+                print("Shitty error \(error)")
+            }
+        }
     }
     
     //objc methods
