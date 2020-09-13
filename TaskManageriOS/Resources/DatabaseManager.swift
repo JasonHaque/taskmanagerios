@@ -79,7 +79,7 @@ extension DatabaseManager{
             return
         }
         
-        guard let key = database.child("\(email.safeDatabaseKey())/tasks").childByAutoId().key else{
+        guard let key = database.child("\(email.safeDatabaseKey())/tasks").childByAutoId().key  as? String else{
             completion(false)
             print("error getting key")
             return
@@ -107,6 +107,26 @@ extension DatabaseManager{
     
     public func getAllTasks(with email : String , completion : @escaping (Result<[Task],Error>) -> Void ){
         
+        database.child("\(email.safeDatabaseKey())/tasks").observe(.value) { snapshot in
+            
+            var data = [Task]()
+            guard snapshot.childrenCount > 0 else{
+                //completion(.failure("error fetching data" as! Error))
+                print("could not get data")
+                return
+            }
+            for tasks in snapshot.children.allObjects as! [DataSnapshot]{
+                let taskObject = tasks.value as? [String : AnyObject]
+                
+                let taskId = taskObject?["id"] as! String
+                let taskName = taskObject?["task_name"] as! String
+                let taskDesc = taskObject?["task_desc"] as! String
+                
+                data.append(Task(taskId: taskId, taskName: taskName, taskDesc: taskDesc))
+            }
+            print(data)
+            completion(.success(data))
+        }
         
         
     }

@@ -60,7 +60,7 @@ class HomeUIViewController: UIViewController {
             switch result{
                 
             case .success(let tasks):
-                break
+                print(tasks)
             case .failure(let error):
                 print("Shitty error \(error)")
             }
