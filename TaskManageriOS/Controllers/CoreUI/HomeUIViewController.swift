@@ -13,7 +13,7 @@ class HomeUIViewController: UIViewController {
     
     private let tableView : UITableView = {
         let table = UITableView()
-        
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
     
@@ -28,6 +28,8 @@ class HomeUIViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(didTapCreateNewTask))
 
         checkAuthStatus()
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,8 +38,12 @@ class HomeUIViewController: UIViewController {
         checkAuthStatus()
         
         startListeningForTasks()
+        view.addSubview(tableView)
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
     private func checkAuthStatus(){
         
         if Auth.auth().currentUser == nil{
@@ -61,6 +67,11 @@ class HomeUIViewController: UIViewController {
                 
             case .success(let tasks):
                 print(tasks)
+                self?.data = tasks
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+                
             case .failure(let error):
                 print("Shitty error \(error)")
             }
@@ -82,4 +93,23 @@ class HomeUIViewController: UIViewController {
 
   
 
+}
+
+extension HomeUIViewController : UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = data[indexPath.row].taskName
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

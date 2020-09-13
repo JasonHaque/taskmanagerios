@@ -115,6 +115,7 @@ extension DatabaseManager{
                 print("could not get data")
                 return
             }
+            data.removeAll()
             for tasks in snapshot.children.allObjects as! [DataSnapshot]{
                 let taskObject = tasks.value as? [String : AnyObject]
                 
