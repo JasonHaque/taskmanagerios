@@ -32,29 +32,47 @@ public class Authmanager {
     
     public func createNewUser(email : String , userName : String, password : String , completion : @escaping (Bool) -> Void){
         
-        Auth.auth().createUser(withEmail: email, password: password) { result , error in
+        
+        DatabaseManager.shared.userExists(email: email) { userExists in
             
-            guard let result = result , error == nil else{
+            if userExists{
+                
+                print("User Already exists")
                 completion(false)
                 return
-            }
-            
-            DatabaseManager.shared.createNewUser(email: email, userName: userName) { success in
                 
-                if success{
-                    print("User registered")
-                    completion(true)
-                    return
-                }
-                else{
+            }
+            else{
+                print("started creating user")
+                
+                Auth.auth().createUser(withEmail: email, password: password) { result , error in
                     
-                    print("Error creating user")
-                    completion(false)
-                    result
+                    guard let result = result , error == nil else{
+                        completion(false)
+                        return
+                    }
                     
+                    DatabaseManager.shared.createNewUser(email: email, userName: userName) { success in
+                        
+                        if success{
+                            print("User registered")
+                            completion(true)
+                            return
+                        }
+                        else{
+                            
+                            print("Error creating user")
+                            completion(false)
+                            return
+                            
+                        }
+                    }
                 }
+                
             }
         }
+        
+        
         
     }
 }

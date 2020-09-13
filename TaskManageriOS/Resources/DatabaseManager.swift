@@ -18,7 +18,17 @@ public class DatabaseManager{
     
     //MARK:- public function calls
     
-    public func userExists(email : String){
+    public func userExists(email : String,completion : @escaping (Bool) -> Void){
+        
+        database.child(email.safeDatabaseKey()).observeSingleEvent(of: .value) { snapshot in
+            
+            guard snapshot.exists() else{
+                completion(false)
+                return
+            }
+            completion(true)
+            return
+        }
         
     }
     
