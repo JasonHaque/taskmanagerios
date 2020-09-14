@@ -121,7 +121,7 @@ class ShowTaskViewController: UIViewController {
             }
             else{
                 
-                //oppsie
+                self?.showUpdateError()
                 
             }
             
@@ -129,6 +129,14 @@ class ShowTaskViewController: UIViewController {
             
         })
         
+    }
+    
+    private func showUpdateError(){
+        let alert = UIAlertController(title: "Oops", message: "there was an error while updating data", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        
+        present(alert,animated: true)
     }
 
     

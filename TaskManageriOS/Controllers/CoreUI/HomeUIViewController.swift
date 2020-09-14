@@ -106,6 +106,7 @@ extension HomeUIViewController : UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = data[indexPath.row].taskName
+        cell.textLabel?.textAlignment = .center
         return cell
     }
     
