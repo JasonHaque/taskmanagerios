@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class NewTaskViewController: UIViewController {
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     private let taskNameField : UITextField = {
         let textfield = UITextField()
@@ -69,10 +72,16 @@ class NewTaskViewController: UIViewController {
                 //show an error here
                 return
         }
+        spinner.textLabel.text = "Saving Task"
+        spinner.show(in: view)
         
         //proceed to call db and save data
         
         DatabaseManager.shared.saveTask(with: taskName, taskDescription: taskDesc) {[weak self] dataSaved in
+            
+            DispatchQueue.main.async {
+                self?.spinner.dismiss()
+            }
             
             if dataSaved{
                 DispatchQueue.main.async {

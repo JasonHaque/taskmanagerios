@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class ShowTaskViewController: UIViewController {
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     private let taskNameField : UITextField = {
            let textfield = UITextField()
@@ -102,8 +105,14 @@ class ShowTaskViewController: UIViewController {
             return
         }
         
+        spinner.textLabel.text = "Updating Task"
+        spinner.show(in: view)
+        
         DatabaseManager.shared.updateTask(with: task.taskId, taskName: updatedTaskName, taskDesc: updatedDescription, completion: { [weak self] updated in
             
+            DispatchQueue.main.async {
+                self?.spinner.dismiss()
+            }
             
             if updated{
                 DispatchQueue.main.async {
