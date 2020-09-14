@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54AE017C674C00A80A13BEB23AE6FC79"
-               BuildableName = "Pods-TaskManageriOS.framework"
-               BlueprintName = "Pods-TaskManageriOS"
+               BlueprintIdentifier = "6F3964F174D0EBFB0D64F8DBC20E1429"
+               BuildableName = "JGProgressHUD.framework"
+               BlueprintName = "JGProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
