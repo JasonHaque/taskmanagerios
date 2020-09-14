@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class RegistrationViewController: UIViewController {
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     private let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
@@ -160,8 +163,14 @@ class RegistrationViewController: UIViewController {
         }
         
         //call sign Up
+        spinner.textLabel.text = "Creating New User"
+        spinner.show(in: view)
         
         Authmanager.shared.createNewUser(email: email, userName: userName, password: password) { [weak self] success in
+            
+            DispatchQueue.main.async {
+                self?.spinner.dismiss()
+            }
             
             if success{
                 //successfully created user

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class LogInViewController: UIViewController {
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     private let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
@@ -144,10 +147,18 @@ class LogInViewController: UIViewController {
         
         //Call LogIn
         
+        spinner.textLabel.text = "Logging In"
+        spinner.show(in: view)
+        
         Authmanager.shared.logInUser(email: email, password: password) {[weak self] success in
+            
+            DispatchQueue.main.async {
+                self?.spinner.dismiss()
+            }
             
             if success{
                 //successfully logged in
+                
                 self?.navigationController?.dismiss(animated: true, completion: nil)
                 
             }
