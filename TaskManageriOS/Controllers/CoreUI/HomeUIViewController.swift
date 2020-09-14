@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+///Class to show home UI
+
 class HomeUIViewController: UIViewController {
     
     private let tableView : UITableView = {

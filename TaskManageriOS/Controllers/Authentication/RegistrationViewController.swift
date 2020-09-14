@@ -9,6 +9,8 @@
 import UIKit
 import JGProgressHUD
 
+/// Registartion of a new user
+
 class RegistrationViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)

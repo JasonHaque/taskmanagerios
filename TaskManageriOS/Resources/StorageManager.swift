@@ -9,6 +9,8 @@
 import Foundation
 import Firebase
 
+//Unused for now
+
 public class StorageManager{
     static let shared = StorageManager()
     

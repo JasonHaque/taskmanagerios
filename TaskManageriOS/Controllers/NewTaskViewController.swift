@@ -9,6 +9,7 @@
 import UIKit
 import JGProgressHUD
 
+/// create a new task
 class NewTaskViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)

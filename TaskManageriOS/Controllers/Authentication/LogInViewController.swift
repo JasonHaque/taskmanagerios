@@ -9,6 +9,8 @@
 import UIKit
 import JGProgressHUD
 
+/// User Log In
+
 class LogInViewController: UIViewController {
     
     private let spinner = JGProgressHUD(style: .dark)
